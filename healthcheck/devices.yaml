@@ -1,0 +1,50 @@
+# a simpe testbed yaml containing a single device
+
+devices:                # all device definition goes under devices block
+  router-1:           # start a device definition with its HOSTNAME
+    type: router
+    os: ios             # this tells the engine what type of OS its connected to
+    credentials:
+        default:                         # login credentials
+            username: admin
+            password: data
+    connections:        # give the block on how to connect to its mgmt interface
+      mgmt:
+        protocol: telnet
+        ip: 100.64.1.1
+#------------------------------#
+  router-2:
+    type: router
+    os: ios
+    credentials:
+        default:
+            username: admin
+            password: data
+    connections:
+      mgmt:
+        protocol: telnet
+        ip: 100.64.2.1
+#------------------------------#
+  switch-1:
+    type: switch
+    os: ios
+    credentials:
+        default:
+            username: admin
+            password: data
+    connections:
+      mgmt:
+        protocol: telnet
+        ip: 100.64.1.2
+#------------------------------#
+  switch-2:
+    type: switch
+    os: ios
+    credentials:
+        default:
+            username: admin
+            password: data
+    connections:
+      mgmt:
+        protocol: telnet
+        ip: 100.64.2.2
